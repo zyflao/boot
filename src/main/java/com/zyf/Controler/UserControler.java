@@ -11,8 +11,7 @@ public class UserControler {
 
 	@RequestMapping("/User")
 	@ResponseBody
-	String login(String content) {
-
+	String login() {
 		return "zyf";
 	}
 
