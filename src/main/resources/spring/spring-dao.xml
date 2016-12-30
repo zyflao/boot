@@ -3,6 +3,8 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
 <!-- 配置mybatis -->
 <!-- 1配置mybaties 配置文件 -->
   <bean id="placeholderConfig"
@@ -52,7 +54,6 @@ http://www.springframework.org/schema/beans/spring-beans.xsd">
 	<!-- 扫描dao接口包，动态实现Dao接口，注入spring -->
 	<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
 	<property name="sqlSessionFactoryBeanName" value = "sqlSessionFactory"/>
-	<property name="basePackage" value = "com.zyf.dao.api"/>
-	
+	<property name="basePackage" value = "com.zyf.*"/>
 	</bean>
 </beans>

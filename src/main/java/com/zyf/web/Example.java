@@ -4,6 +4,8 @@ import org.apache.log4j.Logger;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -11,13 +13,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class Example {
 	Logger log = Logger.getLogger(Example.class);
 
-	@RequestMapping("/")
+	@RequestMapping(value = "/")
 	String home() {
 		return "Hello World!";
 	}
 
 	@RequestMapping("/hello/{myName}")
 	String index(@PathVariable String myName) {
+		log.info(myName);
+		return "Hello " + myName + "!!!";
+	}
+
+	@RequestMapping(value = "/hello", method = RequestMethod.GET)
+	String hello(
+			@RequestParam(value = "name", required = false, defaultValue = "default1") String myName) {
 		log.info(myName);
 		return "Hello " + myName + "!!!";
 	}

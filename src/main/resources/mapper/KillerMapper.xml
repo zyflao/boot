@@ -16,6 +16,14 @@
 
     id, seckill_id, user_phone, state
   </sql>
+    <select id="selectAll" parameterType="com.zyf.dao.Seckill">
+    select 
+    <include refid="Base_Column_List" />
+    from killer
+    where seckill_id = #{seckillId,jdbcType=BIGINT}
+    order by create_time desc
+    limit #{offset},#{limit}
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />
