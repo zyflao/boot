@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+        location="C:\Users\Administrator\.m2\repository\mysql\mysql-connector-java\5.1.40\mysql-connector-java-5.1.40.jar" />
+    <context id="context1" targetRuntime="MyBatis3">
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/nanshan?useUnicode=true&amp;characterEncoding=UTF-8"
+            userId="root" password="admin" />
+        <javaModelGenerator targetPackage="com.zyf.dao"
+            targetProject="F:\\zyf\workspace\mySpringBoot\src\main\java" />
+        <sqlMapGenerator targetPackage="mapper"
+            targetProject="F:\\zyf\workspace\mySpringBoot\src\main\resources" />
+        <javaClientGenerator targetPackage="com.zyf.dao.api"
+            targetProject="F:\\zyf\workspace\mySpringBoot\src\main\java" type="XMLMAPPER" />
+        <table schema="CL_DEMO" tableName="killer" 
+          enableCountByExample="false" enableUpdateByExample="false"
+         enableDeleteByExample="false" enableSelectByExample="false"
+         selectByExampleQueryId="false" escapeWildcards="false">
+         <property name="useActualColumnNames" value="false" />
+         <property name="ignoreQualifiersAtRuntime" value="true" />
+                  <ignoreColumn column="Created"/>
+         <ignoreColumn column="Updated"/>
+         <ignoreColumn column="Status"/>
+         <ignoreColumn column="create_time"/>
+         <ignoreColumn column="update_time"/>
+         <ignoreColumn column="utime"/>
+         <ignoreColumn column="status"/>
+         </table>
+       <!-- <table schema="CL_DEMO" tableName="seckill" /> --> 
+    </context>
+</generatorConfiguration>
