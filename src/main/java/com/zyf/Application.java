@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
@@ -20,8 +21,21 @@ public class Application {
 	}
 }
 
+/**
+ * @author yunfeng.zang
+ * @createTime 2017年1月11日下午5:01:48 跨域问题 springboot配置
+ */
 @Configuration
 class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
+
+	@Override
+	public void addCorsMappings(CorsRegistry registry) {
+		registry.addMapping("/jquery/**")
+				// .allowedOrigins("http://domain2.com")
+				.allowedMethods("POST", "GET")
+				.allowedHeaders("header", "sessionId", "passportId")
+				.maxAge(3600);
+	}
 
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

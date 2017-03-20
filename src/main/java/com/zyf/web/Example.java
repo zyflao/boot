@@ -1,6 +1,7 @@
 package com.zyf.web;
 
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,9 +14,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class Example {
 	Logger log = Logger.getLogger(Example.class);
 
+	@Value("${encryptionKey}")
+	private String a;
+
 	@RequestMapping(value = "/")
 	String home() {
-		return "Hello World!";
+		return "Hello World!" + a;
 	}
 
 	@RequestMapping("/hello/{myName}")

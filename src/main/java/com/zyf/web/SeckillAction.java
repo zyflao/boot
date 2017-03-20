@@ -14,7 +14,7 @@ import com.zyf.service.SeckillService;
 @RestController
 @EnableAutoConfiguration
 @RequestMapping(value = "/seckill")
-public class SeckillAction extends BaseService {
+public class SeckillAction {
 	Logger log = Logger.getLogger(Example.class);
 
 	@Autowired

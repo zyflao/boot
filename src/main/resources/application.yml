@@ -10,10 +10,21 @@ spring:
     username: root
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
-
-spring.datasource.type: com.zaxxer.hikari.HikariDataSource
+  redis:
+    host: localhost
+    password:
+    port: 6379
+    timeout: 0
+    sentinel:
+       master: 1
+    
 mybatis: 
   mapperLocations: classpath:mapper/*.xml
   typeAliasesPackage: com.zyf.dao
   configLocation: classpath:mybatis-config.xml
   
+encryptionKey: zyf
+mail: 
+ username: zyf
+
+

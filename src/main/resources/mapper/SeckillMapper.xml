@@ -112,11 +112,9 @@
     update 
     seckill
     set 
-      number = number-1,
+      number = number-1
     where seckill_id = #{seckillId,jdbcType=BIGINT} 
-    and number >0 
-    and  start_time< now()
-    and  end_time> now()
+    and number > 0 
     ]]>
   </update>
 </mapper>

@@ -13,7 +13,10 @@ public class ControllerInterceptor implements HandlerInterceptor {
 	@Override
 	public boolean preHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler) throws Exception {
-		// TODO Auto-generated method stub
+	/*	response.setHeader("Access-Control-Allow-Origin", "*");
+		response.setHeader("Access-Control-Allow-Methods", "POST");
+		response.setHeader("Access-Control-Allow-Headers", "Access-Control");
+		response.setHeader("Allow", "POST");*/
 		return true;
 	}
 
@@ -21,7 +24,6 @@ public class ControllerInterceptor implements HandlerInterceptor {
 	public void postHandle(HttpServletRequest request,
 			HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		// TODO Auto-generated method stub
 
 	}
 
