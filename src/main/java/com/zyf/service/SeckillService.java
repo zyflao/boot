@@ -5,13 +5,10 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import sun.util.logging.resources.logging;
-
 import com.zyf.dao.Killer;
 import com.zyf.dao.Seckill;
 import com.zyf.dao.api.KillerMapper;
 import com.zyf.dao.api.SeckillMapper;
-import com.zyf.exception.RepeatKillException;
 
 @Service
 public class SeckillService extends BaseService {
