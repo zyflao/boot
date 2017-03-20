@@ -1,3 +1,4 @@
+
 server:
   port: 8080
   address: localhost  
@@ -18,13 +19,13 @@ spring:
     sentinel:
        master: 1
     
-mybatis: 
-  mapperLocations: classpath:mapper/*.xml
-  typeAliasesPackage: com.zyf.dao
-  configLocation: classpath:mybatis-config.xml
+mybatis:
+mapperLocations: classpath:mapper/*.xml
+typeAliasesPackage: com.zyf.dao
+configLocation: classpath:mybatis-config.xml
   
 encryptionKey: zyf
 mail: 
- username: zyf
+username: zyf
 
 
