@@ -7,6 +7,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.transaction.annotation.Transactional;
 
 import com.zyf.dao.api.KillerMapper;
 
@@ -15,6 +16,7 @@ import com.zyf.dao.api.KillerMapper;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("classpath:spring/spring-dao.xml")
+@Transactional
 public class KillerMapTest {
 
 	Logger log = Logger.getLogger(KillerMapTest.class);
@@ -31,8 +33,7 @@ public class KillerMapTest {
 
 	@Test
 	public void insertSelectiveTest() {
-
-		Long id = 2L;
+		Long id = 3L;
 		String userPhone = "13261251343";
 		Byte b = 1;
 		Killer k = new Killer();
