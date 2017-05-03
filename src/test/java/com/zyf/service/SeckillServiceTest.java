@@ -1,7 +1,5 @@
 package com.zyf.service;
 
-import java.util.List;
-
 import javax.annotation.Resource;
 
 import org.junit.Test;

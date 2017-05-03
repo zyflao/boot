@@ -7,13 +7,15 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.ImportResource;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.zyf.Interceptor.ControllerInterceptor;
 import com.zyf.Interceptor.LogHandlerInterceptor;
 
 @SpringBootApplication
-@ImportResource(locations = { "classpath:spring/spring-dao.xml" })
+@ImportResource(locations = { "classpath:spring/spring-dao.xml",
+		"classpath:spring/spring-thymeleaf.xml" })
 public class Application {
 
 	public static void main(String[] args) {
@@ -27,6 +29,15 @@ public class Application {
  */
 @Configuration
 class MyWebAppConfigurer extends WebMvcConfigurerAdapter {
+	/**
+	 * 添加静态资源路径默认src/main/resource下
+	 */
+	@Override
+	public void addResourceHandlers(ResourceHandlerRegistry registry) {
+		registry.addResourceHandler("/template/**").addResourceLocations(
+				"classpath:/template/");
+		super.addResourceHandlers(registry);
+	}
 
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {

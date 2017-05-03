@@ -7,7 +7,7 @@ import java.util.Map;
 
 import com.alibaba.fastjson.JSONObject;
 
-public class zyftest {
+public class RetrunjsonTest {
 	public static void main(String[] args) {
 		List<String> l = new ArrayList<String>();
 		l.add("1");

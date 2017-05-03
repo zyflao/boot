@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.zyf</groupId>
@@ -11,7 +11,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>1.4.0.BUILD-SNAPSHOT</version>
+        <version>1.4.3.RELEASE</version>
     </parent>
 
     <!-- Add typical dependencies for a web application -->
@@ -70,13 +70,38 @@
   	<groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-test</artifactId>
 </dependency>
-        
-		<!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
-       <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
-            <optional>true</optional>
+   <!-- httpclient-->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
         </dependency>
+  
+  <!-- thymeleaf-->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+    <dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-test</artifactId>
+        <scope>test</scope>
+    </dependency>
+<!-- Redis -->
+
+
+<dependency>
+  	<groupId>com.google.code.gson</groupId>
+    <artifactId>gson</artifactId>
+    <version>2.2.4</version>
+</dependency>
+  <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.8.4</version>
+        </dependency>
+		<!-- https://mvnrepository.com/artifact/org.springframework/springloaded -->
+    
 		
 		<!-- serlet-web -->
 
@@ -131,16 +156,27 @@
     <artifactId>fastjson</artifactId>
     <version>1.2.23</version>
 </dependency>
-
     	<dependency>
     		<groupId>org.scala-lang</groupId>
     		<artifactId>scala-library</artifactId>
     		<version>2.11.0</version>
     	</dependency>
     </dependencies>
-
     <!-- Package as an executable jar -->
     <build>
+    <sourceDirectory>src/main/java</sourceDirectory>
+    <testSourceDirectory>src/test/java </testSourceDirectory>
+      <resources>  
+       <resource>  
+          <directory>src/main/resources</directory>  
+       </resource>  
+   </resources>  
+   <testResources>  
+       <testResource>  
+          <directory>src/test/resources </directory>  
+       </testResource>  
+   </testResources>  
+   
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -158,28 +194,4 @@
             
         </plugins>
     </build>
-
-    <!-- Add Spring repositories -->
-    <!-- (you don't need this if you are using a .RELEASE version) -->
-    <repositories>
-        <repository>
-            <id>spring-snapshots</id>
-            <url>http://repo.spring.io/snapshot</url>
-            <snapshots><enabled>true</enabled></snapshots>
-        </repository>
-        <repository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </repository>
-    </repositories>
-    <pluginRepositories>
-        <pluginRepository>
-            <id>spring-snapshots</id>
-            <url>http://repo.spring.io/snapshot</url>
-        </pluginRepository>
-        <pluginRepository>
-            <id>spring-milestones</id>
-            <url>http://repo.spring.io/milestone</url>
-        </pluginRepository>
-    </pluginRepositories>
 </project>

@@ -1,10 +1,13 @@
-
 server:
   port: 8080
-  address: localhost  
+  address: localhost
   session:
     timeout: 60
 spring:
+  resources:
+      static-locations: classpath:/META-INF/resources/,classpath:/resources/template/,\classpath:/static/,classpath:/public/,file:${web.upload-path}
+  mvc:
+      static-path-pattern: /**
   datasource:
     name: test
     url: jdbc:mysql://localhost:3306/nanshan?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
@@ -13,19 +16,15 @@ spring:
     driver-class-name: com.mysql.jdbc.Driver
   redis:
     host: localhost
-    password:
+    password: null
     port: 6379
     timeout: 0
     sentinel:
-       master: 1
-    
-mybatis:
+      master: 1
+mybatis: null
 mapperLocations: classpath:mapper/*.xml
 typeAliasesPackage: com.zyf.dao
 configLocation: classpath:mybatis-config.xml
-  
 encryptionKey: zyf
-mail: 
+mail: null
 username: zyf
-
-
