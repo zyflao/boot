@@ -176,7 +176,6 @@
           <directory>src/test/resources </directory>  
        </testResource>  
    </testResources>  
-   
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
@@ -194,4 +193,8 @@
             
         </plugins>
     </build>
+<properties>
+    <!-- The main class to start by executing java -jar -->
+    <start-class>com.zyf.Application</start-class>
+</properties>
 </project>

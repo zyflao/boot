@@ -5,7 +5,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 
-@Component
 public class MyTestServiceImpl implements IMyTestService {
 	// 每5秒执行一次
 	public void myTest() {
